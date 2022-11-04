@@ -1,0 +1,47 @@
+:host {
+  .toolbar {
+    display: flex;
+  }
+  .top-navigtaion {
+    margin-left: auto;
+  }
+  .user-icon {
+    margin-left: auto;
+    visibility:hidden;
+  }
+
+  .app-name {
+    margin-right: auto;
+    cursor: pointer;
+  }
+
+  .app-menu {
+    margin-right: 16px;
+  }
+
+  .sidenav-container {
+    background: #ffffff;
+    color: inherit;
+    height: calc(100vh - 64px);
+  }
+
+  @media screen and (max-width: 600px) {
+    .sidenav-container {
+      height: calc(100vh - 56px);
+    }
+  }
+
+  @media screen and (max-width: 860px) {
+    .top-navigtaion {
+      display: none;
+    }
+
+    .user-icon {
+      visibility:visible;
+    }
+
+    .app-name {
+      margin-right: auto;
+    }
+  }
+}

@@ -1,3 +1,58 @@
-<div class="container_maintainance">
-  <img src="assets/images/barber_mantainance.png">
-</div>
+<mat-toolbar class="toolbar" [@enter1]>
+  <button
+    mat-icon-button
+    (click)="snav.toggle()"
+    class="app-menu"
+    *ngIf="isUser"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <h1 routerLink="/" routerLinkActive="active" class="app-name" [@enter2]>
+    Barber Manager
+  </h1>
+  <button mat-button [matMenuTriggerFor]="loginMenu" class="user-icon">
+    <mat-icon>person_outline</mat-icon>
+  </button>
+  <nav class="top-navigtaion">
+    <a mat-button routerLink="/register" routerLinkActive="active">Unirse</a>
+    <a mat-button routerLink="/login" routerLinkActive="active">Ingresar</a>
+  </nav>
+</mat-toolbar>
+
+<mat-menu #loginMenu="matMenu">
+  <button mat-menu-item routerLink="/register" routerLinkActive="active">
+    Unirse
+  </button>
+  <button mat-menu-item routerLink="/login" routerLinkActive="active">
+    Ingresar
+  </button>
+</mat-menu>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #snav mode="over" fixedTopGap="56">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/dashboard" routerLinkActive="active"
+        >Información</a
+      >
+      <a mat-list-item routerLink="/calendar" routerLinkActive="active"
+        >Calendario</a
+      >
+      <a mat-list-item routerLink="/recommended" routerLinkActive="active"
+        >Recomendados</a
+      >
+      <a mat-list-item routerLink="/barbers" disabled>Barberos</a>
+      <a mat-list-item routerLink="/salons" disabled>Salones</a>
+      <a mat-list-item routerLink="/nails" disabled>Uñas</a>
+      <a mat-list-item routerLink="/depilation" disabled>Depilación</a>
+      <a mat-list-item routerLink="/salons" disabled>Spas</a>
+      <a mat-list-item routerLink="/trainers" disabled>Entrenadores</a>
+      <a mat-list-item routerLink="/teraphy" disabled>Terapia</a>
+      <a mat-list-item routerLink="/tatoo" disabled>Tatuaje</a>
+      <a mat-list-item routerLink="/piercing" disabled>Perforación</a>
+      <a mat-list-item routerLink="/products" disabled>Productos</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
