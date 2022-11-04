@@ -1,0 +1,134 @@
+.first-home-container,
+.second-home-container,
+.third-home-container {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: var(--background-color);
+  height: 660px;
+}
+
+.first-home-container {
+  background-image: url("/assets/images/barber_image1.png");
+}
+
+.second-home-container {
+  background-image: url("/assets/images/barber_image2.png");
+}
+
+.third-home-container {
+  background-image: url("/assets/images/barber_image3.png");
+}
+
+.first-home-title{
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 110px;
+  padding-right: 200px;
+  font-size: 90px;
+}
+
+.second-home-title {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 160px;
+  padding-left: 100px;
+  font-size: 80px;
+}
+
+.third-home-title {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 120px;
+  padding-right: 500px;
+  font-size: 80px;
+}
+
+.first-home-desc{
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 100px;
+  padding-right: 170px;
+  padding-left: 1000px;
+  text-align: justify;
+  font-size: 35px;
+  line-height: 35px;
+}
+.second-home-desc {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 120px;
+  padding-left: 190px;
+  padding-right: 800px;
+  text-align: justify;
+  font-size: 35px;
+  line-height: 35px;
+}
+.third-home-desc{
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 70px;
+  padding-right: 210px;
+  padding-left: 600px;
+  text-align: justify;
+  font-size: 30px;
+  line-height: 35px;
+}
+
+footer > span {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 0px;
+}
+
+@media screen and (max-width: 600px) {
+  .first-home-container,
+  .third-home-container {
+    height: 200px;
+  }
+
+  .second-home-container{
+    height: 180px;
+  }
+
+  .first-home-title{
+    padding-top: 4%;
+    padding-right: 12%;
+    font-size: 16px;
+  }
+
+  .second-home-title {
+    padding-top: 8%;
+    padding-left: 4%;
+    font-size: 16px;
+  }
+
+  .third-home-title{
+    padding-top: 8%;
+    padding-right: 30%;
+    font-size: 16px;
+  }
+
+  .first-home-desc {
+    padding-top: 2%;
+    padding-right: 4%;
+    padding-left: 45%;
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  .second-home-desc {
+    padding-top: 4%;
+    padding-right: 40%;
+    padding-left: 8%;
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  .third-home-desc {
+    padding-top: 2%;
+    padding-right: 4%;
+    padding-left: 30%;
+    font-size: 8px;
+    line-height: 10px;
+  }
+}
