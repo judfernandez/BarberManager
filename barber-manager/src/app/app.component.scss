@@ -9,6 +9,13 @@
     margin-left: auto;
     visibility:hidden;
   }
+  .user-loged-icon{
+    padding-right: 8px;
+  }
+
+  .user-loged-menu {
+    margin-left: auto;
+  }
 
   .app-name {
     margin-right: auto;
@@ -44,4 +51,8 @@
       margin-right: auto;
     }
   }
+}
+
+.swal2-confirm.swal2-styled{
+  color: #ff4081;
 }

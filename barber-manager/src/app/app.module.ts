@@ -13,6 +13,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatTabsModule } from '@angular/material/tabs';
 
 // Components
 import { AppComponent } from './app.component';
@@ -22,7 +24,6 @@ import { ErrorComponent } from './error/error.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BarbersComponent } from './barbers/barbers.component';
-import { RegisterComponent } from './register/register.component';
 import { RequestComponent } from './request/request.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -36,7 +37,6 @@ import { ProfileComponent } from './profile/profile.component';
     CalendarComponent,
     DashboardComponent,
     BarbersComponent,
-    RegisterComponent,
     RequestComponent,
     NavbarComponent,
     ProfileComponent,
@@ -54,7 +54,9 @@ import { ProfileComponent } from './profile/profile.component';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDialogModule,
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
