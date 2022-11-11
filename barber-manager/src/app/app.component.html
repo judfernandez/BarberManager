@@ -3,28 +3,38 @@
     mat-icon-button
     (click)="snav.toggle()"
     class="app-menu"
-    *ngIf="isUser"
+    *ngIf="isLogged"
   >
     <mat-icon>menu</mat-icon>
   </button>
   <h1 routerLink="/" routerLinkActive="active" class="app-name" [@enter2]>
     Barber Manager
   </h1>
-  <button mat-button [matMenuTriggerFor]="loginMenu" class="user-icon">
+  <button mat-button [matMenuTriggerFor]="loginMenu" class="user-icon" *ngIf="!isLogged">
     <mat-icon>person_outline</mat-icon>
   </button>
-  <nav class="top-navigtaion">
-    <a mat-button routerLink="/register" routerLinkActive="active">Unirse</a>
-    <a mat-button routerLink="/login" routerLinkActive="active">Ingresar</a>
+  <button mat-button [matMenuTriggerFor]="loginMenu" class="user-loged-menu" *ngIf="isLogged">
+    <mat-icon class="user-loged-icon">person_outline</mat-icon>
+    <span>{{ userInfo?.name }}</span>
+  </button>
+  <nav class="top-navigtaion" *ngIf="!isLogged">
+    <a mat-button (click)="openDialog(dialogTypeEnum.register)">Unirse</a>
+    <a mat-button (click)="openDialog(dialogTypeEnum.login)">Ingresar</a>
   </nav>
 </mat-toolbar>
 
 <mat-menu #loginMenu="matMenu">
-  <button mat-menu-item routerLink="/register" routerLinkActive="active">
+  <button mat-menu-item (click)="openDialog(dialogTypeEnum.register)" *ngIf="!isLogged">
     Unirse
   </button>
-  <button mat-menu-item routerLink="/login" routerLinkActive="active">
+  <button mat-menu-item (click)="openDialog(dialogTypeEnum.login)" *ngIf="!isLogged">
     Ingresar
+  </button>
+  <button mat-menu-item (click)="isLogged = false" disabled *ngIf="isLogged">
+    Perfil
+  </button>
+  <button mat-menu-item (click)="isLogged = false" *ngIf="isLogged">
+    Salir
   </button>
 </mat-menu>
 
