@@ -15,6 +15,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatCardModule } from '@angular/material/card';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 // Components
 import { AppComponent } from './app.component';
@@ -23,9 +25,8 @@ import { HomeComponent } from './home/home.component';
 import { ErrorComponent } from './error/error.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { BarbersComponent } from './barbers/barbers.component';
+import { RecommendedComponent } from './recommended/recommended.component';
 import { RequestComponent } from './request/request.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
@@ -36,9 +37,8 @@ import { ProfileComponent } from './profile/profile.component';
     ErrorComponent,
     CalendarComponent,
     DashboardComponent,
-    BarbersComponent,
+    RecommendedComponent,
     RequestComponent,
-    NavbarComponent,
     ProfileComponent,
   ],
   imports: [
@@ -57,6 +57,8 @@ import { ProfileComponent } from './profile/profile.component';
     MatMenuModule,
     MatDialogModule,
     MatTabsModule,
+    MatCardModule,
+    MatTooltipModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

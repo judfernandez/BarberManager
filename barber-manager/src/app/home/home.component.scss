@@ -81,7 +81,10 @@ footer > span {
 }
 
 @media screen and (max-width: 600px) {
-  .first-home-container,
+  .first-home-container {
+    height: 208px;
+  }
+
   .third-home-container {
     height: 200px;
   }
