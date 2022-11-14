@@ -1,7 +1,7 @@
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BarbersComponent } from './barbers/barbers.component';
+import { RecommendedComponent } from './recommended/recommended.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ErrorComponent } from './error/error.component';
@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'calendar', component: CalendarComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'barbers', component: BarbersComponent },
+  { path: 'recommended', component: RecommendedComponent },
   { path: 'request', component: RequestComponent },
   { path: 'profile', component: ProfileComponent },
   { path: '**', component: ErrorComponent },

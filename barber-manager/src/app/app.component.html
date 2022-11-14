@@ -33,7 +33,7 @@
   <button mat-menu-item (click)="isLogged = false" disabled *ngIf="isLogged">
     Perfil
   </button>
-  <button mat-menu-item (click)="isLogged = false" *ngIf="isLogged">
+  <button mat-menu-item (click)="isLogged = false" routerLink="/" routerLinkActive="active" *ngIf="isLogged">
     Salir
   </button>
 </mat-menu>

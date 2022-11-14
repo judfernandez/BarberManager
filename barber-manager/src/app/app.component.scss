@@ -1,5 +1,6 @@
 :host {
   .toolbar {
+    background-color: white;
     display: flex;
   }
   .top-navigtaion {
@@ -27,7 +28,7 @@
   }
 
   .sidenav-container {
-    background: #ffffff;
+    background: whitesmoke;
     color: inherit;
     height: calc(100vh - 64px);
   }
