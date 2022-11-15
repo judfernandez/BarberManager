@@ -17,6 +17,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { FlatpickrModule } from 'angularx-flatpickr';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
 
 // Components
 import { AppComponent } from './app.component';
@@ -28,6 +31,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { RecommendedComponent } from './recommended/recommended.component';
 import { RequestComponent } from './request/request.component';
 import { ProfileComponent } from './profile/profile.component';
+import { BarberComponent } from './barber/barber.component';
+import { SaloonsComponent } from './saloons/saloons.component';
+import { TatooComponent } from './tatoo/tatoo.component';
+import { SpaComponent } from './spa/spa.component';
+
+// Others
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 @NgModule({
   declarations: [
@@ -40,6 +50,10 @@ import { ProfileComponent } from './profile/profile.component';
     RecommendedComponent,
     RequestComponent,
     ProfileComponent,
+    BarberComponent,
+    SaloonsComponent,
+    TatooComponent,
+    SpaComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,6 +73,9 @@ import { ProfileComponent } from './profile/profile.component';
     MatTabsModule,
     MatCardModule,
     MatTooltipModule,
+    NgbModalModule,
+    FlatpickrModule.forRoot(),
+    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
   ],
   providers: [],
   bootstrap: [AppComponent],

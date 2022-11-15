@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { UserRolesEnum } from '../enums';
-import { LoginDialogData, UserDB } from '../interfaces';
+import { LoginDialogData, UserDB, WebApiResponse } from '../interfaces';
 import { USERS_DB } from '../Mock-DB/users';
 
 @Injectable({
@@ -19,6 +19,7 @@ export class UserService {
     );
     if (userData) {
       this.isLogged = true;
+      this.saveUserLogin(userData);
       return userData;
     } else {
       this.isLogged = false;
@@ -26,7 +27,7 @@ export class UserService {
     }
   }
 
-  registerUser(data: LoginDialogData): { statusCode: number; message: string } {
+  registerUser(data: LoginDialogData): WebApiResponse {
     const { name, lastName, email, password } = data;
     const userData = this.userList.find((user) => user.email === email);
     if (!userData) {
@@ -47,5 +48,25 @@ export class UserService {
         message: 'El usuario ya se encuentra registrado',
       };
     }
+  }
+
+  saveUserLogin(user: UserDB) {
+    localStorage.setItem('logedUser', JSON.stringify(user));
+  }
+
+  takeUserLoged(): UserDB | null {
+    const logedUser = localStorage.getItem('logedUser');
+    const user = logedUser ? JSON.parse(logedUser) : null;
+    if (user) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
+    return user;
+  }
+
+  removeUserLoged() {
+    this.isLogged = false;
+    localStorage.removeItem('logedUser');
   }
 }

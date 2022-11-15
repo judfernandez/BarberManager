@@ -1,5 +1,5 @@
-import { UserRolesEnum } from "../enums";
-import { UserDB } from "../interfaces";
+import { UserRolesEnum } from '../enums';
+import { UserDB } from '../interfaces';
 
 export let USERS_DB: UserDB[] = [
   {
