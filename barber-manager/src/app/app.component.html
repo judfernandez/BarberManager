@@ -10,10 +10,20 @@
   <h1 routerLink="/" routerLinkActive="active" class="app-name" [@enter2]>
     Barber Manager
   </h1>
-  <button mat-button [matMenuTriggerFor]="loginMenu" class="user-icon" *ngIf="!isLogged">
+  <button
+    mat-button
+    [matMenuTriggerFor]="loginMenu"
+    class="user-icon"
+    *ngIf="!isLogged"
+  >
     <mat-icon>person_outline</mat-icon>
   </button>
-  <button mat-button [matMenuTriggerFor]="loginMenu" class="user-loged-menu" *ngIf="isLogged">
+  <button
+    mat-button
+    [matMenuTriggerFor]="loginMenu"
+    class="user-loged-menu"
+    *ngIf="isLogged"
+  >
     <mat-icon class="user-loged-icon">person_outline</mat-icon>
     <span>{{ userInfo?.name }}</span>
   </button>
@@ -24,16 +34,30 @@
 </mat-toolbar>
 
 <mat-menu #loginMenu="matMenu">
-  <button mat-menu-item (click)="openDialog(dialogTypeEnum.register)" *ngIf="!isLogged">
+  <button
+    mat-menu-item
+    (click)="openDialog(dialogTypeEnum.register)"
+    *ngIf="!isLogged"
+  >
     Unirse
   </button>
-  <button mat-menu-item (click)="openDialog(dialogTypeEnum.login)" *ngIf="!isLogged">
+  <button
+    mat-menu-item
+    (click)="openDialog(dialogTypeEnum.login)"
+    *ngIf="!isLogged"
+  >
     Ingresar
   </button>
   <button mat-menu-item (click)="isLogged = false" disabled *ngIf="isLogged">
     Perfil
   </button>
-  <button mat-menu-item (click)="isLogged = false" routerLink="/" routerLinkActive="active" *ngIf="isLogged">
+  <button
+    mat-menu-item
+    (click)="logout()"
+    routerLink="/"
+    routerLinkActive="active"
+    *ngIf="isLogged"
+  >
     Salir
   </button>
 </mat-menu>
@@ -41,23 +65,59 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #snav mode="over" fixedTopGap="56">
     <mat-nav-list>
-      <a mat-list-item routerLink="/dashboard" routerLinkActive="active"
+      <a
+        mat-list-item
+        routerLink="/dashboard"
+        routerLinkActive="active"
+        (click)="snav.toggle()"
         >Información</a
       >
-      <a mat-list-item routerLink="/calendar" routerLinkActive="active"
+      <a
+        mat-list-item
+        routerLink="/calendar"
+        routerLinkActive="active"
+        (click)="snav.toggle()"
         >Calendario</a
       >
-      <a mat-list-item routerLink="/recommended" routerLinkActive="active"
+      <a
+        mat-list-item
+        routerLink="/recommended"
+        routerLinkActive="active"
+        (click)="snav.toggle()"
         >Recomendados</a
       >
-      <a mat-list-item routerLink="/barbers" disabled>Barberos</a>
-      <a mat-list-item routerLink="/salons" disabled>Salones</a>
+      <a
+        mat-list-item
+        routerLink="/barbers"
+        routerLinkActive="active"
+        (click)="snav.toggle()"
+        >Barberos</a
+      >
+      <a
+        mat-list-item
+        routerLink="/saloons"
+        routerLinkActive="active"
+        (click)="snav.toggle()"
+        >Salones</a
+      >
+      <a
+        mat-list-item
+        routerLink="/tatoo"
+        routerLinkActive="active"
+        (click)="snav.toggle()"
+        >Tatuaje</a
+      >
+      <a
+        mat-list-item
+        routerLink="/spa"
+        routerLinkActive="active"
+        (click)="snav.toggle()"
+        >Spas</a
+      >
       <a mat-list-item routerLink="/nails" disabled>Uñas</a>
       <a mat-list-item routerLink="/depilation" disabled>Depilación</a>
-      <a mat-list-item routerLink="/salons" disabled>Spas</a>
       <a mat-list-item routerLink="/trainers" disabled>Entrenadores</a>
       <a mat-list-item routerLink="/teraphy" disabled>Terapia</a>
-      <a mat-list-item routerLink="/tatoo" disabled>Tatuaje</a>
       <a mat-list-item routerLink="/piercing" disabled>Perforación</a>
       <a mat-list-item routerLink="/products" disabled>Productos</a>
     </mat-nav-list>

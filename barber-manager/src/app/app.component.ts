@@ -37,6 +37,12 @@ export class AppComponent {
         toast.addEventListener('mouseleave', Swal.resumeTimer);
       },
     });
+
+    const userSaved = this.userService.takeUserLoged();
+    if (userSaved) {
+      this.isLogged = true;
+      this.userInfo = userSaved;
+    }
   }
 
   openDialog(dialogType: DialogTypeEnum) {
@@ -79,5 +85,10 @@ export class AppComponent {
         }
       }
     });
+  }
+
+  logout() {
+    this.isLogged = false;
+    this.userService.removeUserLoged();
   }
 }

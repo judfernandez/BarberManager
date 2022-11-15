@@ -16,6 +16,11 @@ export class UserDB {
   type?: UserRolesEnum;
 }
 
+export class WebApiResponse {
+  statusCode?: number;
+  message?: string;
+}
+
 export class RecommendedDB {
   iconUrl?: string;
   name?: string;
@@ -30,3 +35,11 @@ export class RecommendedDB {
   inHome?: boolean;
   homePrice?: string;
 }
+
+export class BarberDB extends RecommendedDB {}
+
+export class SaloonsDB extends RecommendedDB {}
+
+export class TatooDB extends RecommendedDB {}
+
+export class SpaDB extends RecommendedDB {}

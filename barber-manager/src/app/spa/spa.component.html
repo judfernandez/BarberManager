@@ -1,0 +1,73 @@
+<div class="recommended-container">
+  <mat-card
+    class="recommended-card"
+    *ngFor="let recommendedUser of recommendedArr; index as index"
+  >
+    <mat-card-header>
+      <div
+        mat-card-avatar
+        class="recommended-header-image"
+        [ngStyle]="{
+          'background-image': 'url(' + recommendedUser.iconUrl + ')',
+          'background-size': 'cover'
+        }"
+      ></div>
+      <mat-card-title>
+        <div class="card-name">
+          {{ recommendedUser.name }} ({{ recommendedUser.rol }})
+        </div>
+        <div class="card-rating">
+          <span *ngFor="let ratingId of ratingArr; index as i">
+            <mat-icon mat-icon color="primary">
+              {{ showIcon(i) }}
+            </mat-icon>
+          </span>
+        </div>
+      </mat-card-title>
+      <mat-card-subtitle
+        ><strong>Especialidad:</strong>
+        {{ recommendedUser.focusedOn }}</mat-card-subtitle
+      >
+    </mat-card-header>
+    <img
+      mat-card-image
+      [src]="recommendedUser.promotionImage"
+      alt="Photo of a hair cut"
+    />
+    <mat-card-content>
+      <div class="left-column-desc">
+        <ul>
+          <li>
+            <strong>Municipio:</strong> {{ recommendedUser.municipallity }}
+          </li>
+          <li><strong>Barrio:</strong> {{ recommendedUser.hood }}</li>
+          <li *ngIf="recommendedUser.cutPrice">
+            <strong>Corte:</strong> {{ recommendedUser.cutPrice }}
+          </li>
+          <li *ngIf="recommendedUser.sessionPrice">
+            <strong>Sesión:</strong> {{ recommendedUser.sessionPrice }}
+          </li>
+        </ul>
+      </div>
+      <div class="right-column-desc">
+        <ul>
+          <li>
+            <strong>En sitio:</strong>
+            {{ recommendedUser.inSite ? "Si" : "No" }}
+          </li>
+          <li>
+            <strong>Domicilio:</strong>
+            {{ recommendedUser.inHome ? "Si" : "No" }}
+          </li>
+          <li><strong>Precio:</strong> {{ recommendedUser.homePrice }}</li>
+        </ul>
+      </div>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-button (click)="noAvailable()">Mas Información</button>
+      <button mat-button (click)="noAvailable()" color="primary">
+        Pedir Cita
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

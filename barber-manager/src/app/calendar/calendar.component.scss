@@ -1,0 +1,44 @@
+.calendar-container {
+  padding-top: 16px;
+  justify-content: center;
+}
+
+.calendar-card {
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.calendar-view-container {
+  padding: 16px 16px;
+}
+
+.calendar-view-buttons {
+  display: flex;
+  float: left;
+  justify-content: flex-start;
+}
+
+.calendar-buttons-container {
+  min-width: 1862px;
+}
+
+.calendar-add-action-button {
+  display: flex;
+  float: right;
+  justify-content: flex-end;
+}
+
+@media screen and (max-width: 600px) {
+  .calendar-view-container {
+    padding: 16px 4px;
+  }
+
+  .calendar-today-action{
+    font-size: 12px;
+  }
+
+  .calendar-buttons-container {
+    min-width: 290px;
+  }
+}
