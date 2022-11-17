@@ -50,6 +50,8 @@ export class CalendarComponent {
 
   view: CalendarView = CalendarView.Month;
 
+  locale: string = 'es';
+
   CalendarView = CalendarView;
 
   viewDate: Date = new Date();
@@ -83,7 +85,7 @@ export class CalendarComponent {
     {
       start: subDays(startOfDay(new Date()), 1),
       end: addDays(new Date(), 1),
-      title: 'A 3 day event',
+      title: 'Colorazión por capas',
       color: { ...colors['red'] },
       actions: this.actions,
       allDay: true,
@@ -95,21 +97,31 @@ export class CalendarComponent {
     },
     {
       start: startOfDay(new Date()),
-      title: 'An event with no end date',
+      title: 'Día de pago de membresia',
       color: { ...colors['yellow'] },
       actions: this.actions,
+      resizable: {
+        beforeStart: true,
+        afterEnd: true,
+      },
+      draggable: true,
     },
     {
       start: subDays(endOfMonth(new Date()), 3),
       end: addDays(endOfMonth(new Date()), 3),
-      title: 'A long event that spans 2 months',
+      title: 'Especialización en cabello crespo',
       color: { ...colors['blue'] },
       allDay: true,
+      resizable: {
+        beforeStart: true,
+        afterEnd: true,
+      },
+      draggable: true,
     },
     {
       start: addHours(startOfDay(new Date()), 2),
       end: addHours(new Date(), 2),
-      title: 'A draggable and resizable event',
+      title: 'Curso de maquillaje',
       color: { ...colors['yellow'] },
       actions: this.actions,
       resizable: {
