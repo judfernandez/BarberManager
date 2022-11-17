@@ -1,5 +1,5 @@
 .calendar-container {
-  padding-top: 16px;
+  padding: 16px;
   justify-content: center;
 }
 
@@ -20,7 +20,7 @@
 }
 
 .calendar-buttons-container {
-  min-width: 1862px;
+  min-width: 1810px;
 }
 
 .calendar-add-action-button {
@@ -30,11 +30,20 @@
 }
 
 @media screen and (max-width: 600px) {
+  button > span {
+    font-size: 12px;
+  }
+
+  .calendar-container {
+    padding: 8px;
+  }
+
   .calendar-view-container {
     padding: 16px 4px;
   }
 
-  .calendar-today-action{
+  .mobile-button-sizing,
+  .calendar-add-action-button {
     font-size: 12px;
   }
 

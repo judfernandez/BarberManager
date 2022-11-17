@@ -13,7 +13,7 @@ span > .mat-icon {
 
 .recommended-card {
   margin: 16px 32px 32px 16px;
-  // max-width: 400px;
+  width: 420px;
 }
 
 .mat-card-avatar {
@@ -22,8 +22,8 @@ span > .mat-icon {
 }
 
 .recommended-container{
-  display: flex;
-  flex-wrap: wrap;
+  // display: flex;
+  // flex-wrap: wrap;
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
@@ -52,13 +52,9 @@ span > .mat-icon {
 }
 
 @media screen and (max-width: 600px) {
-
-  .recommended-container{
-    display: block;
-  }
-
   .recommended-card {
     margin: 8px 8px 16px 8px;
+    width: 312px;
   }
 
   .mat-card-image{
@@ -70,7 +66,8 @@ span > .mat-icon {
     font-size: 12px;
   }
 
-  .card-name{
-    font-size: 18px;
+  .card-name,
+  .mat-card-header .mat-card-title{
+    font-size: 16px;
   }
 }
