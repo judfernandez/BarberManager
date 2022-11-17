@@ -23,6 +23,7 @@ import {
   CalendarView,
 } from 'angular-calendar';
 import { EventColor } from 'calendar-utils';
+import Swal from 'sweetalert2';
 
 const colors: Record<string, EventColor> = {
   red: {
@@ -133,8 +134,21 @@ export class CalendarComponent {
   ];
 
   activeDayIsOpen: boolean = true;
+  ToastMessage: typeof Swal;
 
-  constructor(private modal: NgbModal) {}
+  constructor(private modal: NgbModal) {
+    this.ToastMessage = Swal.mixin({
+      toast: true,
+      position: 'center',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer);
+        toast.addEventListener('mouseleave', Swal.resumeTimer);
+      },
+    });
+  }
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
@@ -200,5 +214,12 @@ export class CalendarComponent {
 
   closeOpenMonthViewDay() {
     this.activeDayIsOpen = false;
+  }
+
+  newEvent() {
+    this.ToastMessage.fire({
+      icon: 'warning',
+      title: 'Función no disponible en este momento',
+    });
   }
 }

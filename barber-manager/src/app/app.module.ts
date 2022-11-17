@@ -20,6 +20,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { NgxEchartsModule } from 'ngx-echarts';
 
 // Components
 import { AppComponent } from './app.component';
@@ -40,6 +41,12 @@ import { SpaComponent } from './spa/spa.component';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
+import { LinePlotComponent } from './dashboard/dashboard-plots/line-plot/line-plot.component';
+import { PiePlotComponent } from './dashboard/dashboard-plots/pie-plot/pie-plot.component';
+import { PercentPlotComponent } from './dashboard/dashboard-plots/percent-plot/percent-plot.component';
+import { PiePlotTwoComponent } from './dashboard/dashboard-plots/pie-plot-two/pie-plot-two.component';
+import { LinePlotTwoComponent } from './dashboard/dashboard-plots/line-plot-two/line-plot-two.component';
+import { LinePlotThreeComponent } from './dashboard/dashboard-plots/line-plot-three/line-plot-three.component';
 registerLocaleData(localeEs);
 
 @NgModule({
@@ -57,6 +64,12 @@ registerLocaleData(localeEs);
     SaloonsComponent,
     TatooComponent,
     SpaComponent,
+    LinePlotComponent,
+    PiePlotComponent,
+    PercentPlotComponent,
+    PiePlotTwoComponent,
+    LinePlotTwoComponent,
+    LinePlotThreeComponent
   ],
   imports: [
     BrowserModule,
@@ -79,6 +92,9 @@ registerLocaleData(localeEs);
     NgbModalModule,
     FlatpickrModule.forRoot(),
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
+    NgxEchartsModule.forRoot({
+      echarts: () => import('echarts'),
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],
